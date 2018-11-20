@@ -42,14 +42,43 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
+<div class="container-pagination">
+<ul class="carrousel-pagination">
+<li class="carrousel-prev"><button type="button">Précédent</button></li>
+<li class="carrousel-next"><button type="button">Suivant</button></li>
+</ul>
+</div>
+
+  <div><img src="https://img.icons8.com/flat_round/100/000000/left.png"></div>
+<div class="container-carrousel">
+  <ul class="carrousel">
     <% @tasks.each do |task|  %>
-      <div class="card col-3">
-        <% unless task.image.nil? %>
-          <%= image_tag task.image, class: "rounded-circle" %>
-        <% end %>
-      </div>
+      <% unless task.image.nil? %>
+        <li><%= image_tag task.image, class: "rounded-circle" %></li>
+      <% end %>
     <% end %>
-  </div>
+  </ul>
+
+</div>
+  <div><img src="https://img.icons8.com/flat_round/100/000000/right.png"></div>
+
+
+<div class="container-cercle">
+  <% i=0 %>
+  <% @tasks.each do |task|  %>
+  <% i += 1 %>
+    <% unless task.image.nil? %>
+      <div id="<%= i %>" style="background:<%= task.image %>;" class="cercle"></div>
+    <% end %>
+    <script>
+      $(document).ready(function(){
+       $("#<%= i %>").click(function() {
+          Cpt = <%= i-1 %>;
+          $(".carrousel").animate({
+          marginLeft : - (Reference.width() * Cpt)
+          });
+        });
+      })
+    </script>
+  <% end %>
 </div>

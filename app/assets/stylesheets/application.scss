@@ -94,3 +94,75 @@
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
+
+
+/* Carousel */
+.container-cercle {
+  display:flex;
+  justify-content: center 
+}
+.container-pagination {
+  display:flex;
+  justify-content: center 
+}
+.container-carrousel {
+
+}
+
+ul.tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs li.tab-link{
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.tab-link.current{
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content{
+  display: none;
+}
+
+.tab-content.current{
+  display: inherit;
+}
+
+
+
+.carrousel {
+  margin:0;
+  padding:0;
+  height:300px;
+}
+.carrousel li {
+  float:left;
+  width:300px;
+  height:300px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  text-align:center;
+  background:#666666;
+}
+
+.carrousel-pagination {
+    float:left;
+    list-style:none;    
+}
+
+.cercle {
+  border-radius:50%;
+  background-color:#666666;
+  position:relative;
+  margin:3px;
+  width:30px;
+  height:30px;  
+}

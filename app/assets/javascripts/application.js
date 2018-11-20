@@ -72,5 +72,70 @@ $(document).ready(function() {
     }
   })
 
+//Carousel
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
+
+    Reference = $(".carrousel li:first-child");
+    NbElement = $(".carrousel li").length;
+  $(".carrousel")
+    .css("width", (Reference.width() * NbElement) );
+  $(".container-carrousel")
+    .width(  Reference.width()  )
+    .height( Reference.height() )
+    .css("overflow", "hidden");
+      Cpt = 0;
+    $(".carrousel-next button").click(function() {
+      if (Cpt === NbElement - 1) {
+        Cpt = 0;
+        $(".carrousel").animate({
+        marginLeft : - (Reference.width() * Cpt)
+        });
+      }
+      else {
+        Cpt ++;
+        $(".carrousel").animate({
+        marginLeft : - (Reference.width() * Cpt)
+        });
+      }
+    });
+    $(".carrousel-prev button").click(function() {
+      if (Cpt ===0) {
+        Cpt = NbElement - 1;
+        $(".carrousel").animate({
+          marginLeft : - (Reference.width() * Cpt)
+        });
+      }
+      else {
+        Cpt--;
+        $(".carrousel").animate({
+          marginLeft : - (Reference.width() * Cpt)
+        });
+      }
+    });
+
+  var timer = setInterval(myTimer, 5000);
+  function myTimer() {
+        if (Cpt === NbElement - 1) {
+          Cpt = 0;
+          $(".carrousel").animate({
+          marginLeft : - (Reference.width() * Cpt)
+          });
+        }
+        else {
+          Cpt ++;
+          $(".carrousel").animate({
+          marginLeft : - (Reference.width() * Cpt)
+          });
+        }
+    }
+    myTimer();
 
 });
