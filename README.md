@@ -31,6 +31,8 @@ Pour créer la base de données : <br/>
 `rails db:create`<br/>
 Pour initialiser la base de données : <br/>
 `rails db:migrate`<br/>
+Pour insérer des données dans la base : <br/>
+`rails db:seed`<br/>
 Puis il faut lancer le serveur : <br/>
 `rails server`<br/>
 Pour accéder au site : [http://localhost:3000/](http://localhost:3000/)<br/><br/>
