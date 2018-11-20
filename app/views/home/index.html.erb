@@ -1,23 +1,45 @@
 <h1 class="text-center mb-4">Welcome to my todolist app</h1>
 <%= render 'layouts/task_form'  %>
-<div class="container">
-  <ul>
-  <% @categories.each do  |category|%>
-  <li><%= category.title  %></li>
-  <div class="card">
-    <ul>
-      <% category.tasks.each do |task|  %>
-      <li>
-        <%= task.title  %>
-        <% unless task.deadline.nil? %>
-          , to read: <%= task.deadline.strftime('%D')  %>
-        <% end %>
-      </li>
+<div class="container mb-5">
+  <div>
+    <ul id="tabs">
+      <% i = 1 %>
+      <% @categories.each do  |category|%>
+        <li id="tab-<%= i %>"><%= category.title  %></li>
+        <% i += 1 %>
       <% end %>
     </ul>
+    <% i = 1 %>
+    <% @categories.each do  |category|%>
+      <div class="card tasks tab-<%= i %>">
+        <ul>
+          <% category.tasks.each do |task|  %>
+          <li>
+            <%= task.title  %>
+            <% unless task.deadline.nil? %>
+              , to read: <%= task.deadline.strftime('%D')  %>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <script>
+        $(document).ready(function() {
+          let tasks = $(".tasks").length
+          for(let i = 0; i <= tasks; i++){
+            $("#tab-<%= i %>").on("click", function(){
+              $(".tab-" + i).hide()
+              $(".tab-<%= i %>").show(250)
+              $("#tab-" + i).removeClass("current")
+              $("#tab-<%= i %>").addClass("current")
+            })
+          }
+        })
+      </script>
+    <% i += 1 %>
+    <% end %>
+
   </div>
-  <% end %>
-  </ul>
 </div>
 
 <div class="container">

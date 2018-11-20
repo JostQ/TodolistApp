@@ -5,3 +5,92 @@
 @import "font-awesome";
 @import "components/*";
 
+.tab-1, .tab-2, .tab-3{
+  display: none;
+}
+
+.current{
+  background-color: #F8F9FA;
+  font-weight: bold;
+  border: 1px solid #e9eaeb;
+}
+
+#tabs{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+#dropdown{
+  cursor: pointer
+}
+
+#dropdown-div{
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 1px 1px 2px;
+  padding: 0 3px;
+  z-index: 1;
+}
+
+#login, #signup{
+  cursor: pointer;
+  color: #007bff;
+}
+
+#login:hover, #signup:hover{
+  color: #0056b3
+}
+
+#modal {
+    z-index: 2;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 5%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+}
+
+#modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1.5% 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#modal-tabs{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+
+#login-tab, #signup-tab{
+  padding: 10px 20%;
+  cursor: pointer;
+}
+
+.login-div, .signup-div{
+  display: none;
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}

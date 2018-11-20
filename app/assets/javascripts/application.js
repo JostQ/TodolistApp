@@ -14,3 +14,63 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+
+$(document).ready(function() {
+
+  $("#tab-1").addClass("current")
+  $(".tab-1").show()
+
+  $("#dropdown").on("click", function(){
+    $("#dropdown-div").show()
+  })
+
+  $( document ).on( "click", function( event ){
+  	if ( !$( event.target ).closest( "#dropdown" ).length ){
+  	  $( "#dropdown-div" ).hide(200);
+  	}
+  });
+
+  $("#login").on("click", function(){
+    $("#modal").show()
+    $("#login-tab").addClass("current")
+    $("#signup-tab").removeClass("current")
+    $(".login-div").show()
+    $(".signup-div").hide()
+    $(".login-div").load("/users/sign_in .container-fluid")
+  })
+  $("#signup").on("click", function(){
+    $("#modal").show()
+    $("#signup-tab").addClass("current")
+    $("#login-tab").removeClass("current")
+    $(".login-div").hide()
+    $(".signup-div").show()
+    $(".signup-div").load("/users/sign_up .container-fluid")
+  })
+
+  $("#signup-tab").on("click", function(){
+    $("#signup-tab").addClass("current")
+    $("#login-tab").removeClass("current")
+    $(".login-div").hide()
+    $(".signup-div").show()
+    $(".signup-div").load("/users/sign_up .container-fluid")
+  })
+  $("#login-tab").on("click", function(){
+    $("#login-tab").addClass("current")
+    $("#signup-tab").removeClass("current")
+    $(".login-div").show()
+    $(".signup-div").hide()
+    $(".login-div").load("/users/sign_in .container-fluid")
+  })
+
+  $(document).on("click", function(event){
+    if (event.target === $("#modal")[0]) {
+      $("#modal").hide()
+    }
+  })
+
+
+});
