@@ -73,47 +73,38 @@ $(document).ready(function() {
   })
 
 //Carousel
-  $('ul.tabs li').click(function(){
-    var tab_id = $(this).attr('data-tab');
 
-    $('ul.tabs li').removeClass('current');
-    $('.tab-content').removeClass('current');
-
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
-  })
-
-    Reference = $(".carrousel li:first-child");
-    NbElement = $(".carrousel li").length;
+    Reference = $(".carrousel li:first-child"); // Notre référence sera la taille de la première image
+    NbElement = $(".carrousel li").length; // Pour créer notre bandeau on aura besoin du nombre d'images
   $(".carrousel")
-    .css("width", (Reference.width() * NbElement) );
+    .css("width", (Reference.width() * NbElement) ); // La largeur totale du bandeau fera Nbre d'images * largeur des images
   $(".container-carrousel")
-    .width(  Reference.width()  )
-    .height( Reference.height() )
-    .css("overflow", "hidden");
-      Cpt = 0;
-    $("#carrousel-next").click(function() {
-      if (Cpt === NbElement - 1) {
+    .width(  Reference.width()  ) 
+    .height( Reference.height() ) // La taille de l'affichage et réglé à la taille d'une image
+    .css("overflow", "hidden"); // Et tout ce qui dépasse est "hidden"
+      Cpt = 0; 
+    $("#carrousel-next").click(function() { // Lien pour afficher l'image suivante
+      if (Cpt === NbElement - 1) { // Si on essaie de dépasser l'image de fin on revient à zéro
         Cpt = 0;
         $(".carrousel").animate({
         marginLeft : - (Reference.width() * Cpt)
         });
       }
-      else {
+      else { // Sinon on passe juste à la suivante
         Cpt ++;
         $(".carrousel").animate({
         marginLeft : - (Reference.width() * Cpt)
         });
       }
     });
-    $("#carrousel-prev").click(function() {
-      if (Cpt ===0) {
-        Cpt = NbElement - 1;
+    $("#carrousel-prev").click(function() { // Lien pour afficher l'image précédente
+      if (Cpt ===0) { // Si on essaie de retourner en arrière dès la première image
+        Cpt = NbElement - 1; // On arrive sur la dernière
         $(".carrousel").animate({
           marginLeft : - (Reference.width() * Cpt)
         });
       }
-      else {
+      else { // Sinon on arrive normalement sur l'image précédente
         Cpt--;
         $(".carrousel").animate({
           marginLeft : - (Reference.width() * Cpt)
@@ -121,7 +112,7 @@ $(document).ready(function() {
       }
     });
 
-  var timer = setInterval(myTimer, 5000);
+  var timer = setInterval(myTimer, 5000); //On déplace le carouselle vers la droite toutes les 5 secondes
   function myTimer() {
         if (Cpt === NbElement - 1) {
           Cpt = 0;
@@ -129,7 +120,7 @@ $(document).ready(function() {
           marginLeft : - (Reference.width() * Cpt)
           });
         }
-        else {
+        else { // Et si on arrive au bout on boucle
           Cpt ++;
           $(".carrousel").animate({
           marginLeft : - (Reference.width() * Cpt)

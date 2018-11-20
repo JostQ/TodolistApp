@@ -44,13 +44,13 @@
 <div class="gros-car">
   
   <div class="container-arrow">
-  <div id="carrousel-prev"><img src="https://img.icons8.com/flat_round/100/000000/left.png"></div>
-  <div id="carrousel-next"><img src="https://img.icons8.com/flat_round/100/000000/right.png"></div>
+  <div id="carrousel-prev"><img src="https://img.icons8.com/flat_round/100/000000/left.png"></div>  <!-- Ici on a laissé le tag img parce que c'est des images externe. Pas besoin d'utiliser les assets pour ça. -->
+  <div id="carrousel-next"><img src="https://img.icons8.com/flat_round/100/000000/right.png"></div><!-- Ce sont nos flêches gauche et droite du carousel. -->
   </div>
 
 <div class="container-carrousel">
   <ul class="carrousel">
-    <% @tasks.each do |task|  %>
+    <% @tasks.each do |task|  %> <!-- Ici on créer une liste avec toutes les images du carousel. -->
       <% unless task.image.nil? %>
         <li><%= image_tag task.image %></li>
       <% end %>
@@ -60,12 +60,13 @@
 
 <div class="container-cercle">
   <% i=0 %>
-  <% @tasks.each do |task|  %>
+  <% @tasks.each do |task|  %> <!-- Et là on crée nos petits cercles en dessous du carousel pour pouvoir y naviguer plus rapidement. -->
   <% i += 1 %>
     <% unless task.image.nil? %>
       <div id="<%= i %>" style="background:<%= task.image %>;" class="cercle"></div>
     <% end %>
-    <script>
+    <!-- Je glisse un petit bout de js ici. La création de lien pointant vers les id des images dans la boucle depuis le fichier JS en lui même ne fonctionnait pas. -->
+    <script> 
       $(document).ready(function(){
        $("#<%= i %>").click(function() {
           Cpt = <%= i-1 %>;
@@ -78,3 +79,4 @@
   <% end %>
 </div>
 </div>
+<!-- Le html est simple. Côté css et js c'est pas la même. -->

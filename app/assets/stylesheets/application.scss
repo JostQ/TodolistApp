@@ -106,6 +106,11 @@
   flex-direction: row;
 }
 
+/* Affichage du carousel qui je le rappelle est une liste, */
+/* Le concept est simple on affiche toutes les images les unes après les autres dans un grand bandeau, */
+/* Puis on cache toutes celles dont on ne veut pas. (plus de détails dans le js.) */
+/* Il aurait peut être été plus simple de jouer avec show et hide, mais je n'ai pas réussi. */
+
 ul.tabs{
   margin: 0px;
   padding: 0px;
@@ -124,14 +129,6 @@ ul.tabs li.tab-link.current{
   color: #222;
 }
 
-.tab-content{
-  display: none;
-}
-
-.tab-content.current{
-  display: inherit;
-}
-
 .carrousel {
   margin:0;
   padding:0;
@@ -148,7 +145,7 @@ ul.tabs li.tab-link.current{
   background:#49A0AE;
   border-radius: 30px;
 }
-
+/* Pour les cercles en dessous du carousel c'est beaucoup plus simple. */
 .container-cercle {
   display:flex;
 }
