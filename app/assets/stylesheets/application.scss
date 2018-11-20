@@ -97,16 +97,13 @@
 
 
 /* Carousel */
-.container-cercle {
+.gros-car {
   display:flex;
-  justify-content: center 
+  flex-direction: column;
 }
-.container-pagination {
+.container-arrow {
   display:flex;
-  justify-content: center 
-}
-.container-carrousel {
-
+  flex-direction: row;
 }
 
 ul.tabs{
@@ -135,8 +132,6 @@ ul.tabs li.tab-link.current{
   display: inherit;
 }
 
-
-
 .carrousel {
   margin:0;
   padding:0;
@@ -150,17 +145,17 @@ ul.tabs li.tab-link.current{
   padding:0;
   list-style:none;
   text-align:center;
-  background:#666666;
+  background:#49A0AE;
+  border-radius: 30px;
 }
 
-.carrousel-pagination {
-    float:left;
-    list-style:none;    
+.container-cercle {
+  display:flex;
 }
 
 .cercle {
   border-radius:50%;
-  background-color:#666666;
+  background-color:#49A0AE;
   position:relative;
   margin:3px;
   width:30px;

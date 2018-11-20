@@ -41,27 +41,22 @@
 
   </div>
 </div>
+<div class="gros-car">
+  
+  <div class="container-arrow">
+  <div id="carrousel-prev"><img src="https://img.icons8.com/flat_round/100/000000/left.png"></div>
+  <div id="carrousel-next"><img src="https://img.icons8.com/flat_round/100/000000/right.png"></div>
+  </div>
 
-<div class="container-pagination">
-<ul class="carrousel-pagination">
-<li class="carrousel-prev"><button type="button">Précédent</button></li>
-<li class="carrousel-next"><button type="button">Suivant</button></li>
-</ul>
-</div>
-
-  <div><img src="https://img.icons8.com/flat_round/100/000000/left.png"></div>
 <div class="container-carrousel">
   <ul class="carrousel">
     <% @tasks.each do |task|  %>
       <% unless task.image.nil? %>
-        <li><%= image_tag task.image, class: "rounded-circle" %></li>
+        <li><%= image_tag task.image %></li>
       <% end %>
     <% end %>
   </ul>
-
 </div>
-  <div><img src="https://img.icons8.com/flat_round/100/000000/right.png"></div>
-
 
 <div class="container-cercle">
   <% i=0 %>
@@ -81,4 +76,5 @@
       })
     </script>
   <% end %>
+</div>
 </div>

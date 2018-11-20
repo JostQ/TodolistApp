@@ -92,7 +92,7 @@ $(document).ready(function() {
     .height( Reference.height() )
     .css("overflow", "hidden");
       Cpt = 0;
-    $(".carrousel-next button").click(function() {
+    $("#carrousel-next").click(function() {
       if (Cpt === NbElement - 1) {
         Cpt = 0;
         $(".carrousel").animate({
@@ -106,7 +106,7 @@ $(document).ready(function() {
         });
       }
     });
-    $(".carrousel-prev button").click(function() {
+    $("#carrousel-prev").click(function() {
       if (Cpt ===0) {
         Cpt = NbElement - 1;
         $(".carrousel").animate({
