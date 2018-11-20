@@ -1,8 +1,8 @@
 # To Do List App :octopus:
 
-The hacking project semaine  :eight:
+The hacking project semaine :eight:
 
-L'exercice consistait à partir d'un projet déjà créé, à
+L'exercice consistait à partir d'un projet déjà créé, à ajouter un système de tab, un menu déroulant, un pop up pour l'authentification, et un carousel.
 
 Travail réalisé par [@Dremsis](https://thehackingproject.slack.com/messages/DD6V0K26N) [@Yannis](https://thehackingproject.slack.com/messages/DD14VBZ0U)  :two_men_holding_hands:
 
@@ -39,7 +39,7 @@ Mais si t'as pas envie de te prendre la tête. On l'a hébergé sur heroku juste
 
 <br/><br/><br/>
 
-Puisque tu es arrivé jusque là, voilà en petit cadeau, un animal tout mignon :  :trollface:
+ :trollface: Puisque tu es arrivé jusque là, voilà en petit cadeau, un animal tout mignon :  
 
 
 ![kdo axolotl](https://cdn140.picsart.com/262009799015212.png "kdo axolotl")
