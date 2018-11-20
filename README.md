@@ -1,6 +1,6 @@
-# To Do List App
+# To Do List App :octopus:
 
-The hacking project semaine huit  :octopus:
+The hacking project semaine  :eight:
 
 L'exercice consistait à partir d'un projet déjà créé, à
 
